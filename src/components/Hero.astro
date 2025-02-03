@@ -1,0 +1,29 @@
+---
+import Social from './Social.astro';
+---
+
+<section class="flex flex-col justify-center h-[75dvh]">
+    <div class="flex flex-col gap-8">
+        <div>
+            <h1 class="text-6xl font-serif sm:text-8xl md:text-7xl text-white font-bold tracking-tightest">
+                Nicolás Arce
+            </h1>
+            <p class="text-3xl sm:text-5xl font-serif text-sky-500">Desarrollador Front-end</p>
+        </div>
+
+        <p class="text-white text-xl sm:text-2xl font-light">
+            Me especializo en el Desarrollo web a medida, siendo una persona autodidacta, espontánea y muy perfeccionista.
+        </p>
+
+        <div class="flex items-center gap-8">
+            <a
+                class="inline-flex text-lg py-4 px-8 text-white leading-5 bg-sky-700 hover:bg-sky-800 rounded-full transition-all transition-300"
+                href="mailto:hola@narce.cl"
+            >
+                Conversemos
+            </a>
+
+            <Social />
+        </div>
+    </div>
+</section>

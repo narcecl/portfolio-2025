@@ -1,0 +1,24 @@
+{
+  "name": "narcecl-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "cleanup": "rm -rf node_modules && rm -rf .astro && rm package-lock.json && npm i",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/tailwind": "^6.0.0",
+    "@iconify-json/mdi": "^1.2.3",
+    "astro": "^5.1.9",
+    "classnames": "^2.5.1",
+    "sass": "^1.83.4",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "astro-icon": "^1.1.5"
+  }
+}
