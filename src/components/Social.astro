@@ -6,9 +6,11 @@ const socials = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/narcecl/', icon: 'linkedin'},
     { name: 'GitHub', href: 'https://github.com/narcecl', icon: 'github'},
 ];
+
+const { class: className, ...otherProps } = Astro.props;
 ---
 
-<ul class="flex gap-4">
+<ul {...otherProps} class={`${className} flex gap-8`}>
     { socials.map(({ name, href, icon }) => {
         return (
             <li>
