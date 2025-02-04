@@ -15,15 +15,17 @@ export default {
 				black: '#1a1a1a',
 				primary:  '#1471b2',
 				secondary: '#1d68a9',
-				card: 'rgba(255, 255, 255,.25)',
+				card: 'rgba(255, 255, 255,.15)',
 				gray: {
-					700: '#242424'
+					700: '#222'
 				}
 			},
 			borderColor: {
-				card: 'rgba(255, 255, 255,.25)',
+				card: 'rgba(255, 255, 255,.15)',
 			}
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('tailwindcss-animated')
+	],
 }
