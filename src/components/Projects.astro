@@ -12,7 +12,10 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
     <div class="flex flex-col gap-14">
         <div class="flex flex-col gap-2">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">
-                Proyectos
+                { currentLang === 'en'
+                    ? 'Projects'
+                    : 'Proyectos'
+                }
             </h2>
 
             <div>
