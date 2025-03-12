@@ -2,22 +2,33 @@
 import Section from './Section.astro'
 import { getCollection, render } from 'astro:content';
 
+const currentLang = Astro.currentLocale;
 const work = await getCollection('work');
-const sortedWork = work.sort((a, b) => a.data.order - b.data.order);
+const filteredWorks = work.filter(({ data: { lang = 'es' } }) => lang === currentLang);
+const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Section>
     <div class="flex flex-col gap-14">
         <div class="flex flex-col gap-2 animate-fade-down animate-delay-300">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">
-                Experiencia laboral
+                { currentLang === 'en'
+                    ? 'Experience'
+                    : 'Experiencia laboral'
+                }
             </h2>
 
             <p class="text-gray-300 text-lg font-light">
-                Durante los últimos años he trabajando principalmente en banca digital, participando en el desarrollo de los Design Systems de Banco Santander, Banco Falabella y Banco Itaú.
+                { currentLang === 'en'
+                    ? 'Over the past few years, I have primarily worked in digital banking, contributing to the development of the Design Systems for Banco Santander, Banco Falabella, and Banco Itaú.'
+                    : 'Durante los últimos años he trabajando principalmente en banca digital, participando en el desarrollo de los Design Systems de Banco Santander, Banco Falabella y Banco Itaú.'
+                }
             </p>
             <p class="text-gray-300 text-lg font-light">
-                Puedes conocer toda mi experiencia laboral en mi perfil de <a href="https://www.linkedin.com/in/narcecl/" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">LinkedIn</a>.
+                { currentLang === 'en'
+                    ? <>You can explore all my work experience on my <a href="https://www.linkedin.com/in/narcecl/" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">LinkedIn</a> profile.</>
+                    : <>Puedes conocer toda mi experiencia laboral en mi perfil de <a href="https://www.linkedin.com/in/narcecl/" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</>
+                }
             </p>
         </div>
 

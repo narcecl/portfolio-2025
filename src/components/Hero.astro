@@ -1,18 +1,27 @@
 ---
 import Social from './Social.astro';
+const currentLang = Astro.currentLocale;
 ---
 
-<section class="flex flex-col justify-center h-[70dvh]">
+<section class="flex flex-col justify-center h-[65dvh]">
     <div class="flex flex-col gap-8">
         <div class="animate-fade-down">
             <h1 class="text-6xl font-serif sm:text-8xl md:text-7xl text-white font-bold tracking-tightest">
                 Nicolás Arce
             </h1>
-            <p class="text-3xl sm:text-5xl font-serif text-sky-500">Desarrollador Front-end</p>
+            <p class="text-3xl sm:text-5xl font-serif text-sky-500">
+                { currentLang === 'en'
+                    ? 'Front-end Developer'
+                    : 'Desarrollador Front-end'
+                }
+            </p>
         </div>
 
         <p class="animate-fade-down animate-delay-100 text-white text-xl sm:text-2xl font-light">
-            Me especializo en el Desarrollo web a medida, siendo una persona autodidacta, espontánea y muy perfeccionista.
+            { currentLang === 'en'
+                ? 'I specialize in custom web development, being a self-taught, spontaneous, and highly perfectionist person.'
+                : 'Me especializo en el Desarrollo web a medida, siendo una persona autodidacta, espontánea y muy perfeccionista.'
+            }
         </p>
 
         <div class="animate-fade-down animate-delay-200">
@@ -21,7 +30,10 @@ import Social from './Social.astro';
                     class="inline-flex text-lg order-2 sm:order-1 py-4 px-8 text-white leading-5 bg-sky-700 hover:bg-sky-800 rounded-full transition-all transition-300"
                     href="mailto:hola@narce.cl"
                 >
-                    Conversemos
+                    { currentLang === 'en'
+                        ? "Let's talk"
+                        : "Conversemos"
+                    }
                 </a>
 
                 <Social class="order-1 sm:order-2" />
