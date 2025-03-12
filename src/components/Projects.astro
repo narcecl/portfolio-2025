@@ -2,8 +2,10 @@
 import Section from './Section.astro'
 import { getCollection, render } from 'astro:content';
 
+const currentLang = Astro.currentLocale;
 const projects = await getCollection('projects');
-const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
+const filteredProjects = projects.filter(({ data: { lang = 'es' } }) => lang === currentLang);
+const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Section>
@@ -15,10 +17,16 @@ const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
 
             <div>
                 <p class="text-gray-300 text-lg font-light">
-                    Aquí puedes ver un poco de lo que he estado trabajando en el último tiempo.
+                    { currentLang === 'en'
+                        ? "Here you can see some of what I've been working on recently."
+                        : "Aquí puedes ver un poco de lo que he estado trabajando en el último tiempo."
+                    }
                 </p>
                 <p class="text-gray-300 text-lg font-light">
-                    Si prefieres, puedes ver todos mis desarrollos en mi perfil de <a href="#" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">GitHub</a>.
+                    { currentLang === 'en'
+                        ? <>If you prefer, you can see all my developments on my <a href="#" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">GitHub</a> profile.</>
+                        : <>Si prefieres, puedes ver todos mis desarrollos en mi perfil de <a href="#" class="text-sky-400 hover:text-sky-400 underline" target="_blank" rel="noreferrer noopener">GitHub</a>.</>
+                    }
                 </p>
             </div>
         </div>
@@ -40,7 +48,7 @@ const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
                                 <Content />
                             </div>
 
-                            <div class="flex max-[374px]:flex-col sm:flex-row gap-4 items-start sm:items-center">
+                            <div class="flex max-[374px]:flex-col sm:flex-row gap-3 items-start sm:items-center">
                                 { url &&
                                     <a
                                         class="inline-flex text-sm py-2 px-4 text-white bg-sky-700 hover:bg-sky-800 rounded-full transition-all"
@@ -48,7 +56,7 @@ const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        Ir al proyecto
+                                        { currentLang === 'en' ? 'See in action' : 'Ir al proyecto' }
                                     </a>
                                 }
                                 { github &&
@@ -58,7 +66,7 @@ const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        Ver en GitHub
+                                        { currentLang === 'en' ? 'Browse Github' : 'Ver en GitHub' }
                                     </a>
                                 }
                             </div>

@@ -1,12 +1,19 @@
 ---
 import Social from './Social.astro';
+const currentLang = Astro.currentLocale;
 ---
 
 <footer class="pb-10">
     <div class="max-w-3xl px-5 mx-auto">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p class="text-gray-300 text-sm font-light">
-                Desarrollado con amor por <mark class="bg-transparent font-bold text-white">Nicolás Arce</mark>.
+                { currentLang === 'en'
+                    ? 'Developed with love by'
+                    : 'Desarrollado con amor por'
+                }
+                <mark class="bg-transparent font-bold text-white">
+                    Nicolás Arce
+                </mark>.
             </p>
 
             <Social />

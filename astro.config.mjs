@@ -7,5 +7,13 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx(), tailwind(), icon()],
+    integrations: [
+        icon(),
+        mdx(),
+        tailwind(),
+    ],
+    i18n: {
+        locales: ["es", "en"],
+        defaultLocale: "es",
+    }
 });
