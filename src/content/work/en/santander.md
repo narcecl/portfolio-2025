@@ -1,13 +1,14 @@
 ---
 company: "Banco Santander Chile"
-endDate: 'nov 2021'
+endDate: 'nov. 2021'
 order: 4
 position: "Lead Front-end Developer"
-startDate: 'agu 2017'
+startDate: 'mar. 2020'
 stack: ['Vue', 'JavaScript', 'ASP', 'Modyo', 'Design System', 'Accessibility', 'HTML5', 'CSS3']
 lang: 'en'
 ---
 
+- Lead Front-end Developer in the Digital Channels team, working on the new public website.
 - Responsible for the development and optimization of the component library in Vue.
 - In charge of creating and maintaining documentation for the development team.
-- Participated in and provided support for new developments and requirements from the bank.
+- Participated in and supported new developments and requirements for the bank.

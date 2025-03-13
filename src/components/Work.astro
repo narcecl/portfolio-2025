@@ -13,7 +13,7 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
         <div class="flex flex-col gap-2 animate-fade-down animate-delay-300">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">
                 { currentLang === 'en'
-                    ? 'Experience'
+                    ? 'Professional Experience'
                     : 'Experiencia laboral'
                 }
             </h2>
@@ -21,7 +21,7 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
             <p class="text-gray-300 text-lg font-light">
                 { currentLang === 'en'
                     ? 'Over the past few years, I have primarily worked in digital banking, contributing to the development of the Design Systems for Banco Santander, Banco Falabella, and Banco Itaú.'
-                    : 'Durante los últimos años he trabajando principalmente en banca digital, participando en el desarrollo de los Design Systems de Banco Santander, Banco Falabella y Banco Itaú.'
+                    : 'Durante los últimos años he trabajando principalmente en banca digital, participando activamente en el desarrollo de los Design Systems de Banco Santander, Banco Falabella y Banco Itaú.'
                 }
             </p>
             <p class="text-gray-300 text-lg font-light">
@@ -41,8 +41,11 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
                 return (
                     <div class="flex flex-col gap-8 border border-card p-6 rounded-2xl">
                         <div>
-                            <h3 class="text-white text-lg">{ company }</h3>
-                            <p class="text-sky-500 text-2xl font-serif">{ position }</p>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                                <p class="text-sky-500 text-2xl font-serif">{ company }</p>
+                                <span class="text-white hidden sm:inline-flex">|</span>
+                                <h3 class="text-white text-lg">{ position }</h3>
+                            </div>
                             <p class="text-gray-300 text-sm font-light">{ startDate } - { endDate }</p>
                         </div>
                         <div class="work__content text-white font-light">
@@ -65,7 +68,11 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
         ul{
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
+
+            @media screen and (min-width: 640px){
+                gap: 4px;
+            }
 
             li{
                 &:before{
