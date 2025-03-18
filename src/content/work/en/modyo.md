@@ -8,6 +8,4 @@ stack: ['Vue', 'JavaScript', 'Modyo', 'Accessibility', 'HTML5', 'CSS3']
 lang: 'en'
 ---
 
-- Senior Front-end Developer for CFG Colombia and PC Factory's e-commerce site.
-- Supported the development and maintenance of the component library.
-- Contributed to code optimization and performance improvements, focusing on semantics.
+I participated in the development and optimization of PC Factory's e-commerce site and in the CFG Colombia project. I contributed to the evolution of the component library and performance improvements, applying best practices in semantics and accessibility to optimize the user experience.

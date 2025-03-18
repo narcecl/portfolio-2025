@@ -8,6 +8,4 @@ stack: ['React', 'Next.js', 'JavaScript', 'Design System', 'Accessibility', 'HTM
 lang: 'en'
 ---
 
-- Front-end Developer for Banco Falabella’s public website (Chile, Mexico, Peru, and Colombia).
-- Supported the development and maintenance of the new React component library for Peru and Chile.
-- Contributed to site optimization and performance improvements, focusing on code quality and semantics.
+I participated in the development of Banco Falabella's public website for Chile, Mexico, Peru, and Colombia, ensuring consistency and optimization. I supported the creation and maintenance of the React component library for Peru and Chile, as well as optimizing code and semantics to improve performance and accessibility.
