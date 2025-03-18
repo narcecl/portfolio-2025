@@ -8,7 +8,4 @@ stack: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Design System', 'Access
 lang: 'en'
 ---
 
-- Senior Front-end Developer in the Design Ops team of the UX Center of Excellence.
-- Responsible for the development and optimization of the new Design System in React.
-- In charge of creating and maintaining documentation for development teams.
-- Collaborating with multidisciplinary teams to enhance the user experience.
+I led the development and optimization of the Design System in React, ensuring its efficiency and scalability. Among my key contributions, I standardized the development of the bank's components by building four libraries, which allowed for greater consistency and standardization across different projects. I was also responsible for the technical documentation for the development teams and collaborated with multidisciplinary teams to improve user experience and accessibility.
