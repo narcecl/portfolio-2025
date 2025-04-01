@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
+import partytown from '@astrojs/partytown';
 
 import icon from 'astro-icon';
 
@@ -11,6 +12,11 @@ export default defineConfig({
         icon(),
         mdx(),
         tailwind(),
+        partytown({
+            config: {
+              forward: ["dataLayer.push"],
+            },
+        }),
     ],
     i18n: {
         locales: ["es", "en"],
