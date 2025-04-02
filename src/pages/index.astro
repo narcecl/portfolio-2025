@@ -13,24 +13,23 @@ import Work from '@components/Work.astro';
 			event: 'section_enter',
 			name: sectionName,
 		};
-		
-		dataLayer.push(config);
+
+		dataLayer?.push(config);
 	}
 
 	document.addEventListener('DOMContentLoaded', () => {
 		const sections = document.querySelectorAll('.section');
 
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if( entry.isIntersecting ){
-					console.log('enter section =>', entry.target.id);
-					trackSectionView(entry.target.id);
-				}
-			});
-		}, {
+		const observerConfig = {
 			rootMargin: "0px",
 			threshold: 0.1,
-		});
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if( entry.isIntersecting ) trackSectionView(entry.target.id);
+			});
+		}, observerConfig);
 
 		sections.forEach(section => observer.observe(section));
 	});
