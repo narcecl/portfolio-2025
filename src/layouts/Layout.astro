@@ -29,6 +29,32 @@ const metaDescription = currentLang === 'en' ? "I am a Front-end Developer with 
 			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-PBW52NLQ');
+
+			const trackSectionView = (sectionName) => {
+				const config = {
+					event: 'section_enter',
+					name: sectionName,
+				};
+
+				dataLayer?.push(config);
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const sections = document.querySelectorAll('.section');
+
+				const observerConfig = {
+					rootMargin: "0px",
+					threshold: 0.1,
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if( entry.isIntersecting ) trackSectionView(entry.target.id);
+					});
+				}, observerConfig);
+
+				sections.forEach(section => observer.observe(section));
+			});
 		</script>
 		<!-- End Google Tag Manager -->
 	</head>
