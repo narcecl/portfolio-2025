@@ -4,7 +4,7 @@ const currentLang = Astro.currentLocale;
 const stack = ['React', 'Next.js', 'Vue', 'Nuxt', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'WordPress', 'Astro', 'Tailwind', 'Git', 'Testing / Jest', 'a11y'];
 ---
 
-<Section>
+<Section {...Astro.props}>
     <div class="flex flex-col gap-14">
         <div class="flex flex-col gap-2">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">

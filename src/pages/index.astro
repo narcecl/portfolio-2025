@@ -6,11 +6,40 @@ import Layout from '@layouts/Layout.astro';
 import Projects from '@components/Projects.astro';
 import Work from '@components/Work.astro';
 ---
+<!-- <script is:inline>
+	const trackSectionView = (sectionName) => {
+		const config = {
+			event: 'section_enter',
+			event_label: sectionName,
+		};
+
+		console.log('event =>', config);
+		dataLayer.push(config);
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const sections = document.querySelectorAll('.section');
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if( entry.isIntersecting ){
+					console.log('enter section =>', entry.target.id);
+					trackSectionView(entry.target.id);
+				}
+			});
+		}, {
+			rootMargin: "0px",
+			threshold: 0.1,
+		});
+
+		sections.forEach(section => observer.observe(section));
+	});
+</script> -->
 
 <Layout>
 	<Header />
-	<Hero />
-	<Work />
-	<Projects />
-	<About />
+	<Hero class="section" id="hero" />
+	<Work class="section" id="work" />
+	<Projects class="section" id="projects" />
+	<About class="section" id="about" />
 </Layout>

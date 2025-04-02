@@ -1,9 +1,10 @@
 ---
 import Social from './Social.astro';
+const { id, class: className } = Astro.props;
 const currentLang = Astro.currentLocale;
 ---
 
-<section class="flex flex-col justify-center h-[65dvh]">
+<section id={id} class={`${className} flex flex-col justify-center h-[65dvh]`}>
     <div class="flex flex-col gap-8">
         <div class="animate-fade-down">
             <h1 class="text-6xl font-serif sm:text-8xl md:text-7xl text-white font-bold tracking-tightest">
