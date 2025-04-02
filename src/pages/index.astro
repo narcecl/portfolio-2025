@@ -7,6 +7,37 @@ import Projects from '@components/Projects.astro';
 import Work from '@components/Work.astro';
 ---
 
+<script is:inline>
+	window.addEventListener('load', () => {
+		console.log('load');
+
+		const trackSectionView = (sectionName) => {
+			const config = {
+				event: 'section_enter',
+				name: sectionName,
+			};
+
+			console.log('track =>', config);
+			dataLayer?.push(config);
+		}
+
+		const sections = document.querySelectorAll('.section');
+
+		const observerConfig = {
+			rootMargin: "0px",
+			threshold: 0.1,
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if( entry.isIntersecting ) trackSectionView(entry.target.id);
+			});
+		}, observerConfig);
+
+		sections.forEach(section => observer.observe(section));
+	});
+</script>
+
 <Layout>
 	<Header />
 	<Hero class="section" id="hero" />
