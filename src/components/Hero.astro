@@ -1,7 +1,11 @@
 ---
 import Social from './Social.astro';
+import locale from '@/i18n/lang.json';
+import type { Locale } from '@/interfaces/lang';
+
 const { id, class: className } = Astro.props;
-const currentLang = Astro.currentLocale;
+const currentLang: Locale = Astro.currentLocale as Locale || 'es';
+const language = locale[currentLang];
 ---
 
 <section id={id} class={`${className} flex flex-col justify-center h-[65dvh]`}>
@@ -11,18 +15,12 @@ const currentLang = Astro.currentLocale;
                 Nicolás Arce
             </h1>
             <p class="text-3xl sm:text-5xl font-serif text-sky-500">
-                { currentLang === 'en'
-                    ? 'Front-end Developer'
-                    : 'Desarrollador Front-end'
-                }
+                { language.sections.hero.position }
             </p>
         </div>
 
         <p class="animate-fade-down animate-delay-100 text-white text-xl sm:text-2xl font-light">
-            { currentLang === 'en'
-                ? 'With over 8 years of experience, I specialize in creating accessible, efficient, and scalable interfaces, with a strong focus on usability and performance.'
-                : 'Con más de 8 años de experiencia, me especializo en la creación de interfaces accesibles, eficientes y escalables, con un fuerte enfoque en usabilidad y performance.'
-            }
+            { language.sections.hero.description }
         </p>
 
         <div class="animate-fade-down animate-delay-200">
@@ -32,10 +30,7 @@ const currentLang = Astro.currentLocale;
                     class="inline-flex text-lg order-2 sm:order-1 py-4 px-8 text-white leading-5 bg-sky-700 hover:bg-sky-800 rounded-full transition-all transition-300"
                     href="mailto:hola@narce.cl"
                 >
-                    { currentLang === 'en'
-                        ? "Let's talk"
-                        : "Conversemos"
-                    }
+                { language.sections.hero.button }
                 </a>
 
                 <Social class="order-1 sm:order-2" />

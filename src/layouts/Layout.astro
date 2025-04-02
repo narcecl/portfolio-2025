@@ -1,10 +1,12 @@
 ---
-import '@styles/global.scss';
+import '@/styles/global.scss';
 import Analytics from '@vercel/analytics/astro'
-import Footer from '@components/Footer.astro';
-const currentLang = Astro.currentLocale;
+import Footer from '@/components/Footer.astro';
+import locale from '@/i18n/lang.json';
+import type { Locale } from '@/interfaces/lang';
 
-const metaDescription = currentLang === 'en' ? "I am a Front-end Developer with over 8 years of experience, specializing in creating accessible, efficient, and scalable interfaces, with a strong focus on usability and performance. Let’s talk about your project." : "Soy Desarrollador Front-end con más de 8 años de experiencia, especializado en la creación de interfaces accesibles, eficientes y escalables, con un fuerte enfoque en usabilidad y performance. Conversemos sobre tu proyecto.";
+const currentLang: Locale = Astro.currentLocale as Locale || 'es';
+const language = locale[currentLang];
 ---
 
 <!DOCTYPE html>
@@ -14,10 +16,13 @@ const metaDescription = currentLang === 'en' ? "I am a Front-end Developer with 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Nicolás Arce | { currentLang === 'en' ? 'Front-end Developer' : 'Desarrollador Front-end' }</title>
+		<title>{ language.meta.title }</title>
 		<meta name="theme-color" content="#1a1a1a" />
-		<meta name="description" content={metaDescription}>
+		<meta name="description" content={ language.meta.description } />
 
+		<link rel="author" href="narce.cl">
+		<meta name="author" content="Nicolás Arce" />
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
