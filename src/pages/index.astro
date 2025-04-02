@@ -11,10 +11,9 @@ import Work from '@components/Work.astro';
 	const trackSectionView = (sectionName) => {
 		const config = {
 			event: 'section_enter',
-			event_label: sectionName,
+			name: sectionName,
 		};
-
-		console.log('event =>', config);
+		
 		dataLayer.push(config);
 	}
 
