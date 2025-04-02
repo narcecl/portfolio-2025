@@ -10,7 +10,6 @@ import Work from '@components/Work.astro';
 <script is:inline>
 	window.addEventListener('load', () => {
 		window.dataLayer = window.dataLayer || [];
-		console.log('load');
 
 		const trackSectionView = (sectionName) => {
 			const config = {
@@ -18,7 +17,6 @@ import Work from '@components/Work.astro';
 				name: sectionName,
 			};
 
-			console.log('track =>', config);
 			window.dataLayer?.push(config);
 		}
 
