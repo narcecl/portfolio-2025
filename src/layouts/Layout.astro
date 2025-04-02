@@ -30,16 +30,16 @@ const metaDescription = currentLang === 'en' ? "I am a Front-end Developer with 
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-PBW52NLQ');
 
-			const trackSectionView = (sectionName) => {
-				const config = {
-					event: 'section_enter',
-					name: sectionName,
-				};
-
-				dataLayer?.push(config);
-			}
-
 			document.addEventListener('DOMContentLoaded', () => {
+				const trackSectionView = (sectionName) => {
+					const config = {
+						event: 'section_enter',
+						name: sectionName,
+					};
+
+					dataLayer?.push(config);
+				}
+
 				const sections = document.querySelectorAll('.section');
 
 				const observerConfig = {
@@ -61,7 +61,14 @@ const metaDescription = currentLang === 'en' ? "I am a Front-end Developer with 
 
 	<body class="font-sans bg-black">
 		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBW52NLQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<noscript>
+			<iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-PBW52NLQ"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"
+			></iframe>
+		</noscript>
 		<!-- End Google Tag Manager (noscript) -->
 
 		<Analytics />
