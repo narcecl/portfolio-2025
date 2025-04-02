@@ -1,0 +1,59 @@
+{
+    "es": {
+        "meta": {
+            "title": "Nicolás Arce | Desarrollador Front-end",
+            "description": "Soy Desarrollador Front-end con más de 8 años de experiencia, especializado en la creación de interfaces accesibles, eficientes y escalables, con un fuerte enfoque en usabilidad y performance. Conversemos sobre tu proyecto."
+        },
+        "sections": {
+            "hero": {
+                "position": "Desarrollador Front-end",
+                "description": "Con más de 8 años de experiencia, me especializo en la creación de interfaces accesibles, eficientes y escalables, con un fuerte enfoque en usabilidad y performance.",
+                "button": "Conversemos"
+            },
+            "work": {
+                "title": "Experiencia laboral",
+                "description": "Durante los últimos años he trabajando principalmente en banca digital, participando activamente en el desarrollo de los Design Systems de Banco Santander, Banco Falabella y Banco Itaú."
+            },
+            "projects": {
+                "title": "Proyectos",
+                "description": "Aquí puedes ver un poco de lo que he estado trabajando en el último tiempo."
+            },
+            "about": {
+                "title": "Acerca de mi",
+                "stack": "Mi stack tecnológico:",
+                "p1": "Soy Desarrollador Front-end con más de 8 años de experiencia, <mark>especializado en la creación de interfaces accesibles, eficientes y escalables</mark>, con un fuerte enfoque en <mark>usabilidad y performance</mark>. Me apasiona mejorar la experiencia del usuario y aportar valor a cada proyecto en el que participo. Me defino como una persona curiosa, proactiva y autodidacta, siempre en busca de nuevas formas de optimización y mejora continua.",
+                "p2": "Durante los últimos años he trabajando principalmente en banca digital, participando activamente en el desarrollo de los <mark>Design Systems de Banco Itaú, Banco Santander y Banco Falabella</mark>. Estas experiencias han fortalecido mis habilidades tanto técnicas como de trabajo en equipo.",
+                "p3": "En mis tiempos libres me dedico a la <mark>Fotografía</mark>, especialmente de retrato. También me encanta el anime y los videojuegos (principalmente en PC y Nintendo Switch)"
+            }
+        }
+
+    },
+    "en": {
+        "meta": {
+            "title": "Nicolás Arce | Front-end Developer",
+            "description": "I am a Front-end Developer with over 8 years of experience, specializing in creating accessible, efficient, and scalable interfaces, with a strong focus on usability and performance. Let’s talk about your project."
+        },
+        "sections": {
+            "hero": {
+                "position": "Front-end Developer",
+                "description": "With over 8 years of experience, I specialize in creating accessible, efficient, and scalable interfaces, with a strong focus on usability and performance.",
+                "button": "Let's talk"
+            },
+            "work": {
+                "title": "Professional Experience",
+                "description": "Over the past few years, I have primarily worked in digital banking, contributing to the development of the Design Systems for Banco Santander, Banco Falabella, and Banco Itaú."
+            },
+            "projects": {
+                "title": "Projects",
+                "description": "Here you can see some of what I've been working on recently."
+            },
+            "about": {
+                "title": "About me",
+                "stack": "My tech stack:",
+                "p1": "I am a Front-end Developer with over 8 years of experience, <mark>specializing in creating accessible, efficient, and scalable interfaces</mark> with a strong focus on <mark>usability and performance</mark>. I am passionate about enhancing user experiences and adding value to every project I work on. I consider myself a curious, proactive, and self-taught person, always seeking new ways to optimize and continuously improve.",
+                "p2": "Over the past few years, I have primarily worked in digital banking, contributing to the development of the <mark>Design Systems for Banco Itaú, Banco Santander, and Banco Falabella</mark>. These experiences have strengthened both my technical skills and my ability to work effectively in a team.",
+                "p3": "In my free time, I dedicate myself to <mark>photography</mark>, particularly portrait. I also love anime and video games (mainly on PC and Nintendo Switch)."
+            }
+        }
+    }
+}

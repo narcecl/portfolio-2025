@@ -1,8 +1,12 @@
 ---
 import Section from './Section.astro'
 import { getCollection, render } from 'astro:content';
+import locale from '@/i18n/lang.json';
+import type { Locale } from '@/interfaces/lang';
 
-const currentLang = Astro.currentLocale;
+const currentLang: Locale = Astro.currentLocale as Locale || 'es';
+const language = locale[currentLang];
+
 const projects = await getCollection('projects');
 const filteredProjects = projects.filter(({ data: { lang = 'es' } }) => lang === currentLang);
 const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.order);
@@ -12,18 +16,12 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
     <div class="flex flex-col gap-14">
         <div class="flex flex-col gap-2">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">
-                { currentLang === 'en'
-                    ? 'Projects'
-                    : 'Proyectos'
-                }
+                { language.sections.projects.title }
             </h2>
 
             <div>
                 <p class="text-gray-300 text-lg font-light">
-                    { currentLang === 'en'
-                        ? "Here you can see some of what I've been working on recently."
-                        : "Aquí puedes ver un poco de lo que he estado trabajando en el último tiempo."
-                    }
+                    { language.sections.projects.description }
                 </p>
                 <p class="text-gray-300 text-lg font-light">
                     { currentLang === 'en'
