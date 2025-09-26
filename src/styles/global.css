@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
+
+@theme {
+    --font-serif: 'Gabarito', 'sans-serif';
+    --font-sans: 'Be Vietnam Pro', 'sans-serif';
+
+    --color-primary: #1471b2;
+    --color-secondary: #1d68a9;
+
+    --color-black: #1a1a1a;
+    --color-primary: #1471b2;
+    --color-secondary: #1d68a9;
+    --color-card: rgba(255, 255, 255, 0.15);
+    --color-gray-700: #222;
+
+    --border-card: rgba(255, 255, 255, 0.15);
+}
+
+@layer base {
+    mark {
+        @apply bg-transparent text-white font-semibold;
+    }
+}

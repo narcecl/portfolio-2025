@@ -15,17 +15,19 @@ const languagesOptions = [
 
 <header class="py-5">
     <ul class="flex gap-6 justify-end">
-        { languagesOptions.map(({ lang, description, href }) => 
-        <li class="text-gray-300 text-lg font-light">
-            <a
-                href={href}
-                class="lang__switch"
-                aria-label={description}
-                title={description}
-            >
-                { lang }
-            </a>
-        </li>
-        )}
+        {
+            languagesOptions.map(({ lang, description, href }) => (
+                <li class="text-gray-300 text-lg font-light">
+                    <a
+                        href={href}
+                        class="lang__switch"
+                        aria-label={description}
+                        title={description}
+                    >
+                        {lang}
+                    </a>
+                </li>
+            ))
+        }
     </ul>
 </header>

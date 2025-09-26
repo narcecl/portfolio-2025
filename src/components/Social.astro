@@ -4,30 +4,38 @@ import { Icon } from 'astro-icon/components';
 const currentLang = Astro.currentLocale;
 
 const socials = [
-    { name: 'Instagram', href: 'https://www.instagram.com/narcecl/', icon: 'instagram'},
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/narcecl/', icon: 'linkedin'},
-    { name: 'GitHub', href: 'https://github.com/narcecl', icon: 'github'},
+    { name: 'Instagram', href: 'https://www.instagram.com/narcecl/', icon: 'instagram' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/narcecl/', icon: 'linkedin' },
+    { name: 'GitHub', href: 'https://github.com/narcecl', icon: 'github' },
 ];
 
 const { class: className, ...otherProps } = Astro.props;
 const socialText = currentLang === 'en' ? 'Follow me on' : 'Sigueme en';
 ---
 
-<ul {...otherProps} class={`${className} flex gap-8`}>
-    { socials.map(({ name, href, icon }) => {
-        return (
-            <li>
-                <a
-                    href={href}
-                    aria-label={`${socialText} en ${name}`}
-                    title={`${socialText} ${name}`}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="text-white text-4xl font-light underline hover:opacity-70 transition-all duration-300"
-                >
-                    <Icon name={`mdi:${icon}`} aria-hidden="true" />
-                </a>
-            </li>
-        )
-    })}
+<ul
+    {...otherProps}
+    class={`${className} flex gap-8`}
+>
+    {
+        socials.map(({ name, href, icon }) => {
+            return (
+                <li>
+                    <a
+                        href={href}
+                        aria-label={`${socialText} ${name}`}
+                        title={`${socialText} ${name}`}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="text-white text-4xl font-light underline hover:opacity-70 transition-all duration-300"
+                    >
+                        <Icon
+                            name={`mdi:${icon}`}
+                            aria-hidden="true"
+                        />
+                    </a>
+                </li>
+            );
+        })
+    }
 </ul>

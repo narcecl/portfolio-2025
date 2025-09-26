@@ -3,17 +3,32 @@ import Section from './Section.astro';
 import locale from '@/i18n/lang.json';
 import type { Locale } from '@/interfaces/lang';
 
-const currentLang: Locale = Astro.currentLocale as Locale || 'es';
+const currentLang: Locale = (Astro.currentLocale as Locale) || 'es';
 const language = locale[currentLang];
 
-const stack = ['React', 'Next.js', 'Vue', 'Nuxt', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'WordPress', 'Astro', 'Tailwind', 'Git', 'Testing / Jest', 'a11y'];
+const stack = [
+    'React',
+    'Next.js',
+    'Vue',
+    'Nuxt',
+    'JavaScript',
+    'TypeScript',
+    'HTML5',
+    'CSS3',
+    'WordPress',
+    'Astro',
+    'Tailwind',
+    'Git',
+    'Testing / Jest',
+    'a11y',
+];
 ---
 
 <Section {...Astro.props}>
     <div class="flex flex-col gap-14">
         <div class="flex flex-col gap-2">
             <h2 class="font-serif text-4xl text-white font-bold tracking-tightest">
-                { language.sections.about.title }
+                {language.sections.about.title}
             </h2>
 
             <div class="flex flex-col gap-8">
@@ -31,15 +46,17 @@ const stack = ['React', 'Next.js', 'Vue', 'Nuxt', 'JavaScript', 'TypeScript', 'H
 
                 <div class="flex flex-col gap-2">
                     <p class="text-gray-300 text-sm font-light">
-                        { language.sections.about.stack }
+                        {language.sections.about.stack}
                     </p>
 
                     <ul class="flex flex-row flex-wrap gap-2">
-                        { stack.map(item => (
-                            <li class="border-card border rounded-xl text-gray-300 py-1 px-2 text-sm">
-                                { item }
-                            </li>
-                        ))}
+                        {
+                            stack.map(item => (
+                                <li class="border-card border rounded-xl text-gray-300 py-1 px-2 text-sm">
+                                    {item}
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

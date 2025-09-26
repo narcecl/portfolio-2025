@@ -1,8 +1,8 @@
 ---
-company: "Modyo"
+company: 'Modyo'
 endDate: 'oct. 2022'
 order: 2
-position: "Lead Front-end Developer"
+position: 'Lead Front-end Developer'
 startDate: 'apr. 2022'
 stack: ['Vue', 'JavaScript', 'Modyo', 'Accessibility', 'HTML5', 'CSS3']
 lang: 'en'

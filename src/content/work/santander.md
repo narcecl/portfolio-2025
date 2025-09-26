@@ -1,8 +1,8 @@
 ---
-company: "Banco Santander Chile"
+company: 'Banco Santander Chile'
 endDate: 'nov. 2021'
 order: 4
-position: "Lead Front-end Developer"
+position: 'Lead Front-end Developer'
 startDate: 'mar. 2020'
 stack: ['Vue', 'JavaScript', 'ASP', 'Modyo', 'Design System', 'Accesibilidad', 'HTML5', 'CSS3']
 ---
