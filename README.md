@@ -1,88 +1,65 @@
-# Nicolás Arce | 2025 Portfolio
+# Nicolás Arce | Portfolio 2025
 
-Welcome to my personal developer portfolio! This project showcases my skills, projects, and experience as a web developer.
+Mi portafolio personal como Desarrollador Front-end, mostrando mi experiencia, proyectos y habilidades técnicas.
 
-## 🚀 Technologies Used
+## Características
 
-- **[Astro](https://astro.build/)** - Static site generator for building fast websites.
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid UI development.
+- **Multi idioma**: Español e Inglés con internacionalización completa
+- **SEO Optimizado**: Meta tags, Open Graph, sitemap automático y hreflang
+- **Responsive**: Diseño adaptable a todos los dispositivos
+- **Performance**: Construcción estática optimizada con Astro
+- **Accesibilidad**: Cumple estándares web modernos
 
-## 📂 Project Structure
+## Tecnologías
 
-The project follows a standard Astro structure:
+- **[Astro](https://astro.build/)** - Framework para sitios web ultrarrápidos
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Framework CSS utility-first
+- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático para JavaScript
+- **Content Collections** - Gestión de contenido con validación de esquemas
 
-```
-/
-├── public/          # Static assets
-├── src/
-    ├── assets/      # Static assets
-│   ├── components/  # Reusable UI components
-│   ├── content/     # Astro content collections
-│   ├── layouts/     # Page layouts
-│   ├── pages/       # Website pages
-├── astro.config.mjs # Astro configuration
-├── tailwind.config.js # Tailwind CSS configuration
-└── package.json     # Project dependencies
-```
+## Instalación
 
-## 📜 Features
+```bash
+# Clonar el repositorio
+git clone https://github.com/narcecl/portfolio-2025.git
+cd portfolio-2025
 
-- Fully responsive design
-- Optimized performance with Astro
-- Modular and reusable components
-- SEO-friendly meta tags
+# Instalar dependencias
+npm install
 
-## 📦 Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-
-    ```sh
-    git clone https://github.com/narcecl/portfolio-2025.git
-    cd portfolio-2025
-    ```
-
-2. Install dependencies:
-
-    ```sh
-    npm install
-    ```
-
-3. Start the development server:
-
-    ```sh
-    npm run dev
-    ```
-
-4. Open `http://localhost:4321/` in your browser.
-
-## 🚀 Deployment
-
-This portfolio can be deployed easily on platforms like:
-
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-- [GitHub Pages](https://pages.github.com/)
-
-To build for production:
-
-```sh
-npm run build
+# Iniciar servidor de desarrollo
+npm run dev
 ```
 
-Then deploy the `dist/` folder to your preferred hosting provider.
+## 🔧 Comandos Disponibles
 
-## 🛠 Customization
+```bash
+npm run dev          # Servidor de desarrollo
+npm run build        # Construir para producción
+npm run preview      # Vista previa del build
+npm run format       # Formatear código con Prettier
+npm run lint         # Ejecutar ESLint
+```
 
-- Update `src/pages/index.astro` to modify the homepage content.
-- Modify `src/components/` to customize UI elements.
-- Adjust `tailwind.config.js` for styling preferences.
+## Estructura i18n
 
-## 📄 License
+```
+src/
+├── content/
+│   ├── projects/
+│   │   ├── *.md        # Proyectos en español
+│   │   └── en/         # Proyectos en inglés
+│   └── work/
+│       ├── *.md        # Experiencia en español
+│       └── en/         # Experiencia en inglés
+├── i18n/
+│   └── lang.json       # Traducciones de la interfaz
+└── pages/
+    ├── index.astro     # Página principal (ES)
+    └── en/
+        └── index.astro # Página principal (EN)
+```
 
-This project is open-source and available under the [MIT License](LICENSE).
+## Licencia
 
----
-
-Feel free to fork and customize this portfolio to fit your personal brand! 🎨✨
+Este proyecto está bajo la Licencia MIT.

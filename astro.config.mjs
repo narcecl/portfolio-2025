@@ -37,7 +37,7 @@ export default defineConfig({
         defaultLocale: 'es',
         routing: {
             prefixDefaultLocale: false,
-            redirectToDefaultLocale: false, // Mejora UX
+            redirectToDefaultLocale: false,
         },
     },
 });

@@ -69,9 +69,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                             <div class="flex flex-col gap-8 w-full sm:w-6/12 p-4 md:p-6 order-2 sm:order-1">
                                 <div>
                                     <h3 class="text-sky-500 text-2xl font-serif">{name}</h3>
-                                    <p class="text-gray-300 text-sm font-light">
-                                        {stack.join(' • ')}
-                                    </p>
+                                    <p class="text-gray-300 text-sm font-light">{stack.join(' • ')}</p>
                                 </div>
                                 <div class="text-white text-lg font-light">
                                     <Content />
@@ -86,9 +84,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                                             target="_blank"
                                             rel="noreferrer noopener"
                                         >
-                                            {currentLang === 'en'
-                                                ? 'See in action'
-                                                : 'Ir al proyecto'}
+                                            {currentLang === 'en' ? 'See in action' : 'Ir al proyecto'}
                                         </a>
                                     )}
                                     {github && (
@@ -99,9 +95,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                                             target="_blank"
                                             rel="noreferrer noopener"
                                         >
-                                            {currentLang === 'en'
-                                                ? 'Browse Github'
-                                                : 'Ver en GitHub'}
+                                            {currentLang === 'en' ? 'Browse Github' : 'Ver en GitHub'}
                                         </a>
                                     )}
                                 </div>

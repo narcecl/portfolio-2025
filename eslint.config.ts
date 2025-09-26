@@ -1,12 +1,19 @@
+// @ts-check
 import js from '@eslint/js';
+// @ts-ignore - Plugin types are complex
 import tsParser from '@typescript-eslint/parser';
+// @ts-ignore - Plugin types are complex
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+// @ts-ignore - Plugin types are complex
 import astroPlugin from 'eslint-plugin-astro';
+// @ts-ignore - Plugin types are complex
 import astroParser from 'astro-eslint-parser';
+// @ts-ignore - Plugin types are complex
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
 
-export default [
+/** @type {import('eslint').Linter.Config[]} */
+const config = [
     js.configs.recommended,
     {
         languageOptions: {
@@ -45,6 +52,7 @@ export default [
             astro: astroPlugin,
         },
         rules: {
+            // @ts-ignore - Astro plugin config structure
             ...astroPlugin.configs.recommended.rules,
         },
     },
@@ -65,3 +73,5 @@ export default [
         ],
     },
 ];
+
+export default config;
