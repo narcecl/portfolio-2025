@@ -1,10 +1,20 @@
 ---
-company: "Banco Itaú Chile"
+company: 'Banco Itaú Chile'
 endDate: 'mar. 2025'
-order: 1
-position: "Front-end Developer Senior"
+order: 2
+position: 'Front-end Developer Senior'
 startDate: 'oct. 2022'
-stack: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Design System', 'Accessibility', 'HTML5', 'CSS3']
+stack:
+    [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'JavaScript',
+        'Design System',
+        'Accessibility',
+        'HTML5',
+        'CSS3',
+    ]
 lang: 'en'
 ---
 

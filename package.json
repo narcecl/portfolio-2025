@@ -1,27 +1,43 @@
 {
-  "name": "narcecl-portfolio",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview",
-    "cleanup": "rm -rf node_modules && rm -rf .astro && rm package-lock.json && npm i",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
-    "@astrojs/partytown": "^2.1.4",
-    "@astrojs/tailwind": "^6.0.0",
-    "@iconify-json/mdi": "^1.2.3",
-    "@vercel/analytics": "^1.4.1",
-    "astro": "^5.1.9",
-    "classnames": "^2.5.1",
-    "sass": "^1.83.4",
-    "tailwindcss": "^3.4.17"
-  },
-  "devDependencies": {
-    "astro-icon": "^1.1.5",
-    "tailwindcss-animated": "^2.0.0"
-  }
+    "name": "narcecl-portfolio",
+    "type": "module",
+    "version": "1.0.0",
+    "scripts": {
+        "astro": "astro",
+        "build": "astro build",
+        "cleanup": "rm -rf node_modules && rm -rf .astro && rm package-lock.json && npm i",
+        "dev": "astro dev --host",
+        "format:check": "prettier --check .",
+        "format": "prettier --write .",
+        "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
+        "preview": "astro preview"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^4.3.6",
+        "@astrojs/partytown": "^2.1.4",
+        "@astrojs/sitemap": "^3.6.0",
+        "@iconify-json/mdi": "^1.2.3",
+        "@tailwindcss/vite": "^4.1.13",
+        "@vercel/analytics": "^1.5.0",
+        "astro": "^5.14.0",
+        "classnames": "^2.5.1",
+        "sass": "^1.93.2",
+        "style-dictionary": "^5.0.4",
+        "tailwindcss": "^4.1.13"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.35.0",
+        "@typescript-eslint/eslint-plugin": "^8.43.0",
+        "@typescript-eslint/parser": "^8.43.0",
+        "astro-eslint-parser": "^1.2.2",
+        "astro-icon": "^1.1.5",
+        "eslint": "^9.35.0",
+        "eslint-plugin-astro": "^1.3.1",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "postcss": "^8.5.6",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
+        "tailwindcss-animated": "^2.0.0"
+    }
 }

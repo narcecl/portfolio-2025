@@ -1,8 +1,8 @@
 ---
-company: "Falabella Financiero"
+company: 'Falabella Financiero'
 endDate: 'abr. 2022'
 order: 3
-position: "Front-end Developer"
+position: 'Front-end Developer'
 startDate: 'nov. 2021'
 stack: ['React', 'Next.js', 'JavaScript', 'Design System', 'Accesibilidad', 'HTML5', 'CSS3']
 ---

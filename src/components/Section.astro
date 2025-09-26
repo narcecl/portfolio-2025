@@ -2,6 +2,9 @@
 const { class: className, ...otherProps } = Astro.props;
 ---
 
-<section {...otherProps} class={`${className} my-32`}>
+<section
+    {...otherProps}
+    class={`${className} my-32`}
+>
     <slot />
 </section>

@@ -38,22 +38,22 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/narcecl/portfolio-2025.git
-   cd portfolio-2025
-   ```
+    ```sh
+    git clone https://github.com/narcecl/portfolio-2025.git
+    cd portfolio-2025
+    ```
 
 2. Install dependencies:
 
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 
 3. Start the development server:
 
-   ```sh
-   npm run dev
-   ```
+    ```sh
+    npm run dev
+    ```
 
 4. Open `http://localhost:4321/` in your browser.
 
@@ -86,4 +86,3 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 
 Feel free to fork and customize this portfolio to fit your personal brand! 🎨✨
-

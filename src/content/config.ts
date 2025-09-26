@@ -9,20 +9,20 @@ const projects = defineCollection({
         order: z.number(),
         stack: z.array(z.string()),
         url: z.string().url().optional(),
-    })
+    }),
 });
 
 const work = defineCollection({
     schema: z.object({
         company: z.string(),
-        endDate: z.string(),
-        lang: z.string().optional(),
-        order: z.number(),
         position: z.string(),
-        stack: z.array(z.string()).optional(),
-        startDate: z.string(),
-    })
+        startDate: z.string().regex(/^[a-z]{3}\. \d{4}$/),
+        endDate: z.string(),
+        order: z.number().min(1),
+        stack: z.array(z.string()).min(1),
+        lang: z.enum(['es', 'en']).optional().default('es'),
+        featured: z.boolean().optional().default(false),
+    }),
 });
 
 export const collections = { work, projects };
-
