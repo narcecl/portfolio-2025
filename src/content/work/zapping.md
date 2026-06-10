@@ -4,7 +4,8 @@ endDate: 'actualidad'
 order: 1
 position: 'Front-end Developer Senior'
 startDate: 'jun. 2025'
-stack: ['Vue', 'JavaScript', 'Design System', 'Accesibilidad', 'HTML5', 'CSS3']
+stack: ['Vue', 'TypeScript', 'Design System', 'Accesibilidad']
+image: '/images/work/zappingtv_logo.jpg'
 ---
 
-Contribuyo activamente en la construcción y evolución del Design System de Zapping, desarrollando componentes reutilizables en Vue que garantizan consistencia visual dentro de la plataforma. También ayudo en la creación de interfaces de usuario optimizadas, aplicando estándares de accesibilidad y mejores prácticas de desarrollo front-end.
+Formo parte del equipo encargado del desarrollo del Design System en Vue, aplicando buenas prácticas de desarrollo y criterios de accesibilidad, contribuyendo a la consistencia y escalabilidad de la plataforma. También contribuyo en la creación y modificación de páginas dentro del panel de usuario de la plataforma.

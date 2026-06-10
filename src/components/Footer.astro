@@ -1,11 +1,13 @@
 ---
 import Social from './Social.astro';
+const currentYear = new Date();
 ---
 
 <footer class="pb-10">
     <div class="max-w-3xl px-5 mx-auto">
-        <div class="flex justify-center sm:justify-start">
+        <div class="flex items-center justify-between">
             <Social />
+            <p class="text-sm text-gray-300 font-light">{currentYear.getFullYear()} &copy; Nicolás Arce</p>
         </div>
     </div>
 </footer>

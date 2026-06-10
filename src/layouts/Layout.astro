@@ -7,6 +7,30 @@ import type { Locale } from '@/interfaces/lang';
 
 const currentLang: Locale = (Astro.currentLocale as Locale) || 'es';
 const language = locale[currentLang];
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Nicolás Arce',
+    url: 'https://narce.cl',
+    jobTitle: currentLang === 'es' ? 'Desarrollador Front-end' : 'Front-end Developer',
+    knowsAbout: ['Front-end Development', 'Accessibility', 'Design Systems', 'User Experience', 'Web Performance'],
+    sameAs: ['https://github.com/narcecl', 'https://www.linkedin.com/in/narcecl/'],
+    email: 'hola@narce.cl',
+    image: 'https://narce.cl/og-image.jpg',
+    description: language.meta.description,
+};
+
+const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Nicolás Arce',
+    url: 'https://narce.cl',
+    description: language.meta.description,
+    inLanguage: currentLang === 'es' ? 'es-CL' : 'en',
+};
 ---
 
 <!doctype html>
@@ -19,8 +43,16 @@ const language = locale[currentLang];
         />
         <link
             rel="icon"
-            type="image/svg+xml"
+            type="image/png"
             href="/favicon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="/favicon.png"
+        />
+        <link
+            rel="manifest"
+            href="/manifest.json"
         />
         <meta
             name="generator"
@@ -30,10 +62,15 @@ const language = locale[currentLang];
         <meta
             name="theme-color"
             content="#1a1a1a"
+            media="(prefers-color-scheme: dark)"
         />
         <meta
             name="description"
             content={language.meta.description}
+        />
+        <link
+            rel="canonical"
+            href={canonicalURL}
         />
 
         <link
@@ -53,6 +90,12 @@ const language = locale[currentLang];
             rel="preconnect"
             href="https://fonts.gstatic.com"
             crossorigin
+        />
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gabarito:wght@400..900&display=swap"
+            as="style"
+            fetchpriority="low"
         />
         <link
             href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gabarito:wght@400..900&display=swap"
@@ -77,7 +120,15 @@ const language = locale[currentLang];
         />
         <meta
             property="og:image"
-            content="/og-image.jpg"
+            content="https://narce.cl/og-image.jpg"
+        />
+        <meta
+            property="og:image:width"
+            content="1200"
+        />
+        <meta
+            property="og:image:height"
+            content="630"
         />
         <!-- Crear imagen -->
         <meta
@@ -99,7 +150,7 @@ const language = locale[currentLang];
         />
         <meta
             name="twitter:image"
-            content="/og-image.jpg"
+            content="https://narce.cl/og-image.jpg"
         />
 
         <!-- Enlaces hreflang para SEO internacional -->
@@ -133,6 +184,14 @@ const language = locale[currentLang];
             })(window, document, 'script', 'dataLayer', 'GTM-PBW52NLQ');
         </script>
         <!-- End Google Tag Manager -->
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(jsonLd)}
+        />
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(websiteJsonLd)}
+        />
     </head>
 
     <body class="font-sans bg-black">
@@ -150,7 +209,7 @@ const language = locale[currentLang];
 
         <Analytics />
 
-        <main class="max-w-3xl px-5 mx-auto">
+        <main class="max-w-3xl px-4 sm:px-5 mx-auto">
             <slot />
         </main>
 

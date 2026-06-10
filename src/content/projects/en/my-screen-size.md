@@ -1,6 +1,6 @@
 ---
 name: My Screen Size
-order: 0
+order: 1
 stack: ['React', 'TypeScript']
 cover: /images/projects/my-screen-size.jpg
 url: https://my-screen-size.vercel.app/
@@ -8,4 +8,4 @@ github: https://github.com/narcecl/my-screen-size
 lang: en
 ---
 
-Get real-time information about the browser, operating system, and window dimensions.
+Real-time information about your screen dimensions.

@@ -27,7 +27,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                     {
                         currentLang === 'en' ? (
                             <>
-                                If you prefer, you can see all my developments on my{' '}
+                                If you prefer, you can see all my projects and contributions on my{' '}
                                 <a
                                     href="https://github.com/narcecl"
                                     class="text-sky-400 hover:text-sky-400 underline"
@@ -40,7 +40,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                             </>
                         ) : (
                             <>
-                                Si prefieres, puedes ver todos mis desarrollos en mi perfil de{' '}
+                                Si prefieres, puedes ver todos mis proyectos y contribuciones en mi perfil de{' '}
                                 <a
                                     href="https://github.com/narcecl"
                                     class="text-sky-400 hover:text-sky-400 underline"
@@ -57,7 +57,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
             </div>
         </div>
 
-        <div class="flex flex-col gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {
                 sortedProjects.map(async item => {
                     const { data } = item;
@@ -65,21 +65,40 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                     const { Content } = await render(item);
 
                     return (
-                        <div class="flex flex-col sm:flex-row border border-card rounded-2xl overflow-hidden">
-                            <div class="flex flex-col gap-8 w-full sm:w-6/12 p-4 md:p-6 order-2 sm:order-1">
-                                <div>
-                                    <h3 class="text-sky-500 text-2xl font-serif">{name}</h3>
-                                    <p class="text-gray-300 text-sm font-light">{stack.join(' • ')}</p>
-                                </div>
-                                <div class="text-white text-lg font-light">
-                                    <Content />
+                        <div class="group flex flex-col border border-card hover:border-primary rounded-2xl overflow-hidden transition-colors duration-300">
+                            <div>
+                                <picture class="h-full w-full">
+                                    <img
+                                        src={cover}
+                                        alt={
+                                            currentLang === 'en'
+                                                ? `Screenshot of ${name} project`
+                                                : `Captura del proyecto ${name}`
+                                        }
+                                        class="h-full w-full max-h-[300px] object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="600"
+                                        height="300"
+                                    />
+                                </picture>
+                            </div>
+                            <div class="flex flex-col gap-6 p-4 md:py-6 md:px-4">
+                                <div class="flex flex-col gap-4">
+                                    <div>
+                                        <h3 class="text-sky-500 text-xl font-serif">{name}</h3>
+                                        <p class="text-gray-300 text-sm font-light">{stack.join(' • ')}</p>
+                                    </div>
+                                    <div class="text-white text-base font-light">
+                                        <Content />
+                                    </div>
                                 </div>
 
-                                <div class="flex max-[374px]:flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                <div class="flex max-[374px]:flex-col sm:flex-row gap-2 items-start sm:items-center *:flex-1">
                                     {url && (
                                         <a
                                             id="projects__url__button"
-                                            class="inline-flex text-sm py-2 px-4 text-white bg-sky-700 hover:bg-sky-800 rounded-full transition-all"
+                                            class="text-center text-sm py-2 px-4 text-white bg-sky-700 hover:bg-sky-800 rounded-full transition-all"
                                             href={url}
                                             target="_blank"
                                             rel="noreferrer noopener"
@@ -90,7 +109,7 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                                     {github && (
                                         <a
                                             id="projects__github__button"
-                                            class="inline-flex text-sm py-2 px-4 text-white hover:bg-card rounded-full transition-all border border-card"
+                                            class="text-center text-sm py-2 px-4 text-white hover:bg-card rounded-full transition-all border border-card"
                                             href={github}
                                             target="_blank"
                                             rel="noreferrer noopener"
@@ -99,15 +118,6 @@ const sortedProjects = filteredProjects.sort((a, b) => a.data.order - b.data.ord
                                         </a>
                                     )}
                                 </div>
-                            </div>
-                            <div class="w-full sm:w-6/12 order-1 sm:order-2">
-                                <picture class="h-full w-full">
-                                    <img
-                                        src={cover}
-                                        alt={name}
-                                        class="h-full w-full max-h-[300px] object-cover"
-                                    />
-                                </picture>
                             </div>
                         </div>
                     );

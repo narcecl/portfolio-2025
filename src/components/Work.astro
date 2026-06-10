@@ -59,27 +59,51 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
             {
                 sortedWork.map(async item => {
                     const { data } = item;
-                    const { company, position, startDate, endDate, stack } = data;
+                    const { company, position, image, startDate, endDate, stack } = data;
                     const { Content } = await render(item);
 
                     return (
-                        <div class="flex flex-col gap-8 border border-card p-6 rounded-2xl">
-                            <div>
-                                <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                                    <p class="text-sky-500 text-2xl font-serif">{company}</p>
-                                    <span class="text-white/50 hidden sm:inline-flex">|</span>
-                                    <h3 class="text-white text-lg">{position}</h3>
+                        <div class="group flex flex-col gap-8 border border-card p-4 sm:p-6 rounded-2xl hover:border-primary transition-colors duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                                {image && (
+                                    <picture class="size-10 rounded-full overflow-hidden shrink-0">
+                                        <img
+                                            src={image}
+                                            alt={currentLang === 'en' ? `${company} logo` : `Logo de ${company}`}
+                                            class="h-full w-full object-cover"
+                                            loading="lazy"
+                                            decoding="async"
+                                            width="40"
+                                            height="40"
+                                        />
+                                    </picture>
+                                )}
+                                <div>
+                                    <div class="flex flex-col">
+                                        <h3 class="text-sky-500 text-xl font-serif">{position}</h3>
+                                        <p class="text-gray-300 font-light text-sm flex flex-col sm:flex-row flex-wrap sm:gap-2">
+                                            <span>{company}</span>
+                                            <span class="hidden sm:inline">•</span>
+                                            <span>
+                                                {startDate} - {endDate}
+                                            </span>
+                                        </p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-300 text-sm font-light">
-                                    {startDate} - {endDate}
-                                </p>
                             </div>
-                            <div class="work__content text-white font-light">
+                            <div class="text-white font-light">
                                 <Content />
                             </div>
-                            <div>
-                                <p class="text-gray-300 text-sm font-light">{stack?.join(' • ')}</p>
-                            </div>
+                            <ul class="flex flex-wrap gap-1">
+                                {stack.map((stackItem, index) => (
+                                    <>
+                                        <li class="text-gray-300 text-sm font-light">
+                                            {stackItem}
+                                            {index < stack.length - 1 ? <span class="ml-1">•</span> : null}
+                                        </li>
+                                    </>
+                                ))}
+                            </ul>
                         </div>
                     );
                 })
@@ -87,29 +111,3 @@ const sortedWork = filteredWorks.sort((a, b) => a.data.order - b.data.order);
         </div>
     </div>
 </Section>
-
-<style>
-    .work__content {
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-
-            @media screen and (min-width: 640px) {
-                gap: 4px;
-            }
-
-            li {
-                &:before {
-                    content: url(/check.svg);
-                    position: absolute;
-                    left: 0;
-                    top: 2px;
-                }
-
-                position: relative;
-                padding-left: 2rem;
-            }
-        }
-    }
-</style>
